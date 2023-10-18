@@ -3,10 +3,10 @@ import Logo from "./logo";
 import Menu from "./menu";
 import { AnimatePresence } from "framer-motion";
 import "i18n";
-// import mail from "@/assets/mail_icon_black.svg";
-// import facebook from "@/assets/facebook_icon_black.svg";
-// import linkedIn from "@/assets/linkedin_icon_black.svg";
-// import gitHub from "@/assets/github_icon_black.svg";
+import Mail from "images/mail_icon_black.inline.svg";
+import Facebook from "images/facebook_icon_black.inline.svg";
+import LinkedIn from "images/linkedin_icon_black.inline.svg";
+import GitHub from "images/github_icon_black.inline.svg";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -27,18 +27,18 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Logo />
         <Menu />
         <div className="grid grid-cols-[40px_40px_40px_40px] items-center hover:[&>a]:animate-buzz [&>a]:w-[25px]">
-          {/* <a href="mailto:tomek@mysliwiec.pro">
-            <Image src={mail} alt="E-mail" width={25} height={25} />
+          <a href="mailto:tomek@mysliwiec.pro">
+            <Mail />
           </a>
           <a href="https://www.facebook.com/mysliwiec.pro/">
-            <Image src={facebook} alt="Facebook" width={25} height={25} />
+            <Facebook />
           </a>
           <a href="https://www.linkedin.com/in/tomekmy/">
-            <Image src={linkedIn} alt="LinkedIn" width={25} height={25} />
+            <LinkedIn />
           </a>
           <a href="https://github.com/tomekmy/">
-            <Image src={gitHub} alt="GitHub" width={25} height={25} />
-          </a> */}
+            <GitHub />
+          </a>
         </div>
       </div>
       <div className="grid grid-rows-[1fr_80px]">
