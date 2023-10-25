@@ -1,4 +1,4 @@
-import React, { useState, type ReactNode, useEffect } from "react";
+import React, { type ReactNode } from "react";
 import Logo from "./logo";
 import Menu from "./menu";
 import { AnimatePresence } from "framer-motion";
@@ -17,7 +17,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <div className="justify-self-end">
           <div className="w-96 h-px absolute top-40 left-0 bg-gradient-to-r from-black via-black to-white" />
           <div className="w-px h-[30rem] bg-gradient-to-b from-black via-black to-white" />
-          <div className="max-w-sm w-[35%] h-px absolute top-96 left-0 bg-gradient-to-r from-black via-black to-white" />
+          <div className="max-w-sm w-[35%] min-w-[230px] h-px absolute top-96 left-0 bg-gradient-to-r from-black via-black to-white" />
         </div>
         <div />
         <div className="justify-self-end">
