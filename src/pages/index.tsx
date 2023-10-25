@@ -2,25 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import type { HeadFC } from "gatsby";
-import Layout from "components/layout";
 import { useTranslation } from "react-i18next";
 
 const Main = () => {
   const { t } = useTranslation();
 
   return (
-    <Layout>
-      <motion.div
-        className="text-3xl"
-        key="main"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 2 }}
-      >
-        {t("main")}
-      </motion.div>
-    </Layout>
+    <motion.div
+      className="text-3xl"
+      key="main"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+    >
+      {t("main")}
+    </motion.div>
   );
 };
 

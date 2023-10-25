@@ -1,4 +1,4 @@
-import React, { type ReactNode } from "react";
+import React, { useState, type ReactNode, useEffect } from "react";
 import Logo from "./logo";
 import Menu from "./menu";
 import { AnimatePresence } from "framer-motion";
@@ -9,6 +9,11 @@ import LinkedIn from "images/linkedin_icon_black.inline.svg";
 import GitHub from "images/github_icon_black.inline.svg";
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const [isLogoAnimationPlayed, setIsLogoAnimationPlayed] = useState(false);
+
+  useEffect(() => {
+    console.log("sdsfd");
+  }, []);
   return (
     <div className="grid grid-cols-[6%_300px_1fr_6%] min-h-screen">
       <div className="grid grid-rows-[200px_1fr_80px]">
