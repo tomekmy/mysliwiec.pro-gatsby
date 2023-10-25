@@ -11,12 +11,6 @@ import EnIcon from "images/en_icon_black.inline.svg";
 import PlIcon from "images/pl_icon_black.inline.svg";
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  const [isLogoAnimationPlayed, setIsLogoAnimationPlayed] = useState(false);
-
-  useEffect(() => {
-    console.log("sdsfd");
-  }, []);
-
   return (
     <div className="grid grid-cols-[6%_minmax(260px,300px)_1fr_6%] min-h-screen">
       <div className="grid grid-rows-[200px_1fr_80px]">
