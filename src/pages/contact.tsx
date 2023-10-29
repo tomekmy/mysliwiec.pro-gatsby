@@ -21,4 +21,4 @@ const Contact = () => {
 
 export default Contact;
 
-export const Head: HeadFC = () => <SeoHead />;
+export const Head: HeadFC = () => <SeoHead prefix="Kontakt" />;

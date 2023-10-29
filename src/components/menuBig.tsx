@@ -1,29 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
+import { ROUTES } from "utils/globals";
 
-const ROUTES = [
-  {
-    name: "START",
-    route: "/",
-  },
-  {
-    name: "O MNIE",
-    route: "/about",
-  },
-  {
-    name: "PORTFOLIO",
-    route: "/portfolio",
-  },
-  {
-    name: "KONTAKT",
-    route: "/contact",
-  },
-];
-
-const Menu = () => {
+const MenuBig = () => {
   return (
-    <ul className="text-2xl hover:[&>li]:text-red-700 [&>li]:w-fit [&>li]:my-1.5">
+    <ul className="text-2xl hover:[&>li]:text-red-700 [&>li]:w-fit [&>li]:my-1.5 hidden sm:block">
       {ROUTES.map((link) => (
         <motion.li
           key={link.route}
@@ -39,4 +21,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuBig;

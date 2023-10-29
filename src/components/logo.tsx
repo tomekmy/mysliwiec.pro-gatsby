@@ -5,10 +5,15 @@ import { Textillate } from "textillate-react";
 const Logo = () => {
   return (
     <div className="pt-3">
-      <h1 className="text-5xl group">
+      {/* text-5xl */}
+      <h1 className="text-4xl group">
         <Link to="/">
-          <span className="group-hover:text-red-700">T</span>omasz{" "}
-          <span className="group-hover:text-red-700">M</span>yśliwiec
+          <div>
+            <span className="group-hover:text-red-700">T</span>omasz{" "}
+          </div>
+          <div>
+            <span className="group-hover:text-red-700">M</span>yśliwiec
+          </div>
         </Link>
       </h1>
       <h2 className="text-lg pt-2">

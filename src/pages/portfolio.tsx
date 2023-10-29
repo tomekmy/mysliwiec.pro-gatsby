@@ -21,4 +21,4 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-export const Head: HeadFC = () => <SeoHead />;
+export const Head: HeadFC = () => <SeoHead prefix="Portfolio" />;

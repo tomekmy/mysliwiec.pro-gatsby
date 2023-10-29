@@ -1,6 +1,6 @@
 import React, { type ReactNode } from "react";
 import Logo from "./logo";
-import Menu from "./menu";
+import MenuBig from "./menuBig";
 import { AnimatePresence } from "framer-motion";
 import "i18n";
 import Mail from "images/mail_icon_black.inline.svg";
@@ -9,15 +9,18 @@ import LinkedIn from "images/linkedin_icon_black.inline.svg";
 import GitHub from "images/github_icon_black.inline.svg";
 import EnIcon from "images/en_icon_black.inline.svg";
 import PlIcon from "images/pl_icon_black.inline.svg";
+import MenuMobile from "./menuMobile";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="grid grid-cols-[6%_minmax(260px,300px)_1fr_6%] min-h-screen">
+    // grid-cols-[6%_minmax(260px,300px)_1fr_6%]
+    <div className="grid grid-cols-[3%_1fr_3%] min-h-screen">
       <div className="grid grid-rows-[200px_1fr_80px]">
         <div className="justify-self-end">
-          <div className="w-96 h-px absolute top-40 left-0 bg-gradient-to-r from-black via-black to-white" />
+          {/* min-w-[360px] */}
+          <div className="w-[40%] min-w-[260px] max-w-[440px] h-px absolute top-40 left-0 bg-gradient-to-r from-black via-black to-white" />
           <div className="w-px h-[30rem] bg-gradient-to-b from-black via-black to-white" />
-          <div className="max-w-sm w-[35%] min-w-[230px] h-px absolute top-96 left-0 bg-gradient-to-r from-black via-black to-white" />
+          <div className="hidden max-w-sm w-[35%] min-w-[230px] h-px absolute top-96 left-0 bg-gradient-to-r from-black via-black to-white" />
         </div>
         <div />
         <div className="justify-self-end">
@@ -27,7 +30,11 @@ const Layout = ({ children }: { children: ReactNode }) => {
       </div>
       <div className="grid grid-rows-[190px_1fr_80px] pl-5">
         <Logo />
-        <Menu />
+        <MenuMobile />
+        <MenuBig />
+        <main className="pt-5">
+          <AnimatePresence>{children}</AnimatePresence>
+        </main>
         <div className="grid grid-cols-[40px_40px_40px_40px] items-center hover:[&>a]:animate-buzz [&>a]:w-[25px]">
           <a href="mailto:tomek@mysliwiec.pro">
             <Mail />
@@ -43,8 +50,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
           </a>
         </div>
       </div>
-      <div className="grid grid-rows-[1fr_80px]">
-        <main className="pt-44">
+      <div className="hidden grid-rows-[160px_1fr_80px]">
+        <main className="pt-5 hidden">
           <AnimatePresence>{children}</AnimatePresence>
         </main>
         <div className="grid justify-end px-5">

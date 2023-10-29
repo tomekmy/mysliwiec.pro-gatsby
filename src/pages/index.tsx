@@ -12,7 +12,7 @@ const Main = () => {
 
   return (
     <motion.div
-      className="text-3xl absolute"
+      className="text-3xl absolute ml-[10%]"
       key="main"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

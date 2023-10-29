@@ -21,4 +21,4 @@ const About = () => {
 
 export default About;
 
-export const Head: HeadFC = () => <SeoHead />;
+export const Head: HeadFC = () => <SeoHead prefix="O mnie" />;
