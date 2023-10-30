@@ -8,11 +8,11 @@ const MenuMobile = () => {
   return (
     <>
       <div
-        className={`sm:hidden transition-all absolute right-36 w-px ${
+        className={`sm:hidden transition-all absolute right-[146px] w-px ${
           showMenu ? "top-0" : "top-[-200px]"
         } h-[200px] mt-[-12px] bg-gradient-to-b from-black via-black to-white`}
       />
-      <div className="absolute right-[3%] mt-3 sm:hidden overflow-hidden">
+      <div className="absolute right-[2%] mt-3 sm:hidden overflow-hidden px-2">
         <div
           className="absolute right-0 w-10 [&>div]:h-1 [&>div]:my-[0.6rem] [&>div]:bg-black z-50 mr-1"
           onClick={() => setShowMenu(!showMenu)}
