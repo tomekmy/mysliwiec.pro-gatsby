@@ -12,14 +12,72 @@ const Main = () => {
 
   return (
     <motion.div
-      className="text-3xl absolute ml-[10%]"
+      className="text-3xl absolute ml-[1%] max-w-[550px]"
       key="main"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: ANIMATION_DURATION }}
     >
-      {t("main")}
+      <p className="pb-3">
+        <Textillate
+          option={{
+            in: {
+              effect: "bounceIn",
+              delay: 30,
+            },
+            out: {
+              effect: "hinge",
+              delay: 40,
+              shuffle: true,
+              sync: false,
+              delayScale: 7,
+            },
+          }}
+        >
+          {t("hello")}
+        </Textillate>
+      </p>
+      <p className="pb-3">
+        <Textillate
+          option={{
+            initialDelay: 250,
+            in: {
+              effect: "bounceIn",
+              delay: 30,
+            },
+            out: {
+              effect: "hinge",
+              delay: 15,
+              shuffle: true,
+              sync: false,
+              delayScale: 2,
+            },
+          }}
+        >
+          {t("iamDeveloper")}
+        </Textillate>
+      </p>
+      <p>
+        <Textillate
+          option={{
+            initialDelay: 900,
+            in: {
+              effect: "bounceIn",
+              delay: 30,
+            },
+            out: {
+              effect: "hinge",
+              delay: 15,
+              shuffle: true,
+              sync: false,
+              delayScale: 2,
+            },
+          }}
+        >
+          {t("whatIdo")}
+        </Textillate>
+      </p>
     </motion.div>
   );
 };

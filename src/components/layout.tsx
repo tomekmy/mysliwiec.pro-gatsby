@@ -10,21 +10,20 @@ import GitHub from "images/github_icon_black.inline.svg";
 import EnIcon from "images/en_icon_black.inline.svg";
 import PlIcon from "images/pl_icon_black.inline.svg";
 import MenuMobile from "./menuMobile";
+import i18next from "i18next";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    // grid-cols-[6%_minmax(260px,300px)_1fr_6%]
-    <div className="grid grid-cols-[3%_1fr_3%] min-h-screen">
+    <div className="grid grid-cols-[3%_1fr_3%] sm:grid-cols-[6%_minmax(260px,300px)_1fr_6%] min-h-screen">
       <div className="grid grid-rows-[200px_1fr_80px]">
         <div className="justify-self-end">
-          {/* min-w-[360px] */}
-          <div className="w-[40%] min-w-[260px] max-w-[440px] h-px absolute top-40 left-0 bg-gradient-to-r from-black via-black to-white" />
+          <div className="w-[40%] min-w-[260px] sm:min-w-[360px] max-w-[440px] h-px absolute top-40 left-0 bg-gradient-to-r from-black via-black to-white" />
           <div className="w-px h-[30rem] bg-gradient-to-b from-black via-black to-white" />
           <div className="hidden max-w-sm w-[35%] min-w-[230px] h-px absolute top-96 left-0 bg-gradient-to-r from-black via-black to-white" />
         </div>
         <div />
         <div className="justify-self-end">
-          <div className="w-80 h-px absolute left-0 bg-gradient-to-r from-black via-black to-white" />
+          <div className="w-56 sm:w-80 h-px absolute left-0 bg-gradient-to-r from-black via-black to-white" />
           <div className="w-px h-64 absolute bottom-0 bg-gradient-to-t from-black via-black to-white" />
         </div>
       </div>
@@ -35,7 +34,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <main className="pt-5">
           <AnimatePresence>{children}</AnimatePresence>
         </main>
-        <div className="grid grid-cols-[40px_40px_40px_40px] items-center hover:[&>a]:animate-buzz [&>a]:w-[25px]">
+        <div className="grid grid-cols-[40px_40px_40px_40px_1fr] sm:grid-cols-[40px_40px_40px_40px] items-center hover:[&>a]:animate-buzz [&>a]:w-[25px]">
           <a href="mailto:tomek@mysliwiec.pro">
             <Mail />
           </a>
@@ -48,6 +47,17 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <a href="https://github.com/tomekmy/">
             <GitHub />
           </a>
+          <button
+            type="button"
+            className="mr-5 justify-self-end w-[25px] hover:animate-buzz sm:hidden"
+            onClick={() =>
+              i18next
+                .changeLanguage(i18next.language === "pl" ? "en" : "pl")
+                .then(() => window.location.reload())
+            }
+          >
+            {i18next.language === "pl" ? <EnIcon /> : <PlIcon />}
+          </button>
         </div>
       </div>
       <div className="hidden grid-rows-[160px_1fr_80px]">
@@ -55,8 +65,16 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <AnimatePresence>{children}</AnimatePresence>
         </main>
         <div className="grid justify-end px-5">
-          <button type="button" className="w-[25px] hover:animate-buzz">
-            <EnIcon />
+          <button
+            type="button"
+            className="mr-5 justify-self-end w-[25px] hover:animate-buzz"
+            onClick={() =>
+              i18next
+                .changeLanguage(i18next.language === "pl" ? "en" : "pl")
+                .then(() => window.location.reload())
+            }
+          >
+            {i18next.language === "pl" ? <EnIcon /> : <PlIcon />}
           </button>
         </div>
       </div>
@@ -64,7 +82,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <div />
         <div />
         <div>
-          <div className="w-56 h-px absolute right-0 bg-gradient-to-l from-black via-black to-white" />
+          <div className="w-24 sm:w-56 h-px absolute right-0 bg-gradient-to-l from-black via-black to-white" />
           <div className="w-px h-52 absolute bottom-0 bg-gradient-to-t from-black via-black to-white" />
         </div>
       </div>

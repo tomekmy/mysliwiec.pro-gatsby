@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
 import { ROUTES } from "utils/globals";
 
 const MenuMobile = () => {
+  const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="absolute right-[3%] mt-3">
-      <div className="absolute left-[-0.5rem] w-px h-[200px] mt-[-12px] bg-gradient-to-b from-black via-black to-white" />
-      <div className="absolute right-0 w-10 [&>div]:h-1 [&>div]:my-2 [&>div]:bg-black">
-        <div></div>
-        <div></div>
-        <div></div>
+    <div className="absolute right-[3%] mt-3 sm:hidden">
+      <div
+        className="absolute right-0 w-10 [&>div]:h-1 [&>div]:my-[0.6rem] [&>div]:bg-black z-50"
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        <div
+          className={`transition-all origin-right ${
+            showMenu ? "rotate-[-45deg]" : "rotate-0"
+          }`}
+        ></div>
+        <div
+          className={`transition-all ${showMenu ? "opacity-0" : "opacity-100"}`}
+        ></div>
+        <div
+          className={`transition-all origin-right ${
+            showMenu ? "rotate-[45deg]" : "rotate-0"
+          }`}
+        ></div>
       </div>
-      <ul className="text-2xl mt-[-5px] hover:[&>li]:text-red-700 [&>li]:w-fit [&>li]:my-1">
+      <div
+        className={`transition-all absolute left-[-0.5rem] w-px ${
+          showMenu ? "left-[-0.5rem]" : "left-[160px]"
+        } h-[200px] mt-[-12px] bg-gradient-to-b from-black via-black to-white`}
+      />
+      <ul
+        className={`transition-all ${
+          showMenu ? "right-0" : "right-[-160px]"
+        } relative text-2xl mt-[-5px] hover:[&>li]:text-red-700 [&>li]:w-fit [&>li]:my-1`}
+      >
         {ROUTES.map((link) => (
           <motion.li
             key={link.route}
