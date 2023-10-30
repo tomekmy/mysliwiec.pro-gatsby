@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { ANIMATION_DURATION } from "utils/globals";
 import SeoHead from "components/seo";
 import { HeadFC } from "gatsby";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="absolute"
@@ -14,7 +17,7 @@ const About = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: ANIMATION_DURATION }}
     >
-      about
+      {t("introText")}
     </motion.div>
   );
 };

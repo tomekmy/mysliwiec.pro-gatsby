@@ -55,7 +55,7 @@ const Main = () => {
             },
           }}
         >
-          {t("iamDeveloper")}
+          {t("iAmDeveloper")}
         </Textillate>
       </p>
       <p>

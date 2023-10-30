@@ -5,8 +5,7 @@ import { Textillate } from "textillate-react";
 const Logo = () => {
   return (
     <div className="pt-3">
-      {/* text-5xl */}
-      <h1 className="text-4xl group">
+      <h1 className="text-4xl group sm:text-5xl">
         <Link to="/">
           <div>
             <span className="group-hover:text-red-700">T</span>omasz{" "}

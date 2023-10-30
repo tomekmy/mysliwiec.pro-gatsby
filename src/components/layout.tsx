@@ -19,7 +19,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <div className="justify-self-end">
           <div className="w-[40%] min-w-[260px] sm:min-w-[360px] max-w-[440px] h-px absolute top-40 left-0 bg-gradient-to-r from-black via-black to-white" />
           <div className="w-px h-[30rem] bg-gradient-to-b from-black via-black to-white" />
-          <div className="hidden max-w-sm w-[35%] min-w-[230px] h-px absolute top-96 left-0 bg-gradient-to-r from-black via-black to-white" />
+          <div className="hidden sm:block max-w-sm w-[35%] min-w-[230px] h-px absolute top-96 left-0 bg-gradient-to-r from-black via-black to-white" />
         </div>
         <div />
         <div className="justify-self-end">
@@ -31,7 +31,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Logo />
         <MenuMobile />
         <MenuBig />
-        <main className="pt-5">
+        <main className="sm:hidden relative">
           <AnimatePresence>{children}</AnimatePresence>
         </main>
         <div className="grid grid-cols-[40px_40px_40px_40px_1fr] sm:grid-cols-[40px_40px_40px_40px] items-center hover:[&>a]:animate-buzz [&>a]:w-[25px]">
@@ -60,8 +60,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
           </button>
         </div>
       </div>
-      <div className="hidden grid-rows-[160px_1fr_80px]">
-        <main className="pt-5 hidden">
+      <div className="hidden sm:grid grid-rows-[160px_1fr_80px]">
+        <div />
+        <main className="pt-5 hidden sm:block relative">
           <AnimatePresence>{children}</AnimatePresence>
         </main>
         <div className="grid justify-end px-5">
